@@ -1,0 +1,25 @@
+<template name="people">
+<div id="people">
+	<h1>The Summer 2015 CS JBS Community</h1>
+	{{#if currentUser}}
+		<table class="table table-striped table-bordered">
+			<thead>
+				<tr>
+					<th class="col-md-1">Gravatar</th>
+					<th class="col-md-11">Profile info</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each profiles}}
+					{{> profileRow}}
+				{{/each}}
+			</tbody>
+		</table>
+	{{else}}
+		<h2>You must be logged in to see the user profiles</h2>
+	{{/if}}
+	
+
+</div>
+</template>
+		
