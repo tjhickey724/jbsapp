@@ -9,7 +9,8 @@ Meteor.startup(function(){
 		Colors.insert({theColor:"yellow", hex:"ff0000"});
 	}
 	if (Chats.find({}).count()==0) {
-		Chats.insert({username: Meteor.user().profile.userName, createdAt: Date(), message:"hi"});
+		Chats.insert({username: "username", createdAt: Date(), message:"hi"});
+		Chats.insert({username: Meteor.user().profile.userName, createdAt: Date(), message:"_"});
 	}
 
 });
