@@ -1,0 +1,28 @@
+<template name="chat">
+	<head>
+		<title> Chat Room </title>
+	</head>
+	<body>
+		<table class="table table-hover">
+			<thead>
+				<tr><th>UserName</th><th>Message</th></tr>
+			</thead>
+			<tbody>
+				{{#each messages}}
+					{{> messageRow}}
+				{{/each}}
+			</tbody>
+		</table>
+	</body>
+</template>
+
+
+<template name="messageRow">
+	<tr>
+		<td>{{username}}</td>
+		<td>{{message}}</td>
+		
+			
+		
+	</tr>
+</template>
