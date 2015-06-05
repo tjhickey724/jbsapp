@@ -1,0 +1,34 @@
+<template name = "chat">
+	<h1>Chat Room</h1>
+	<table class = "table table-hover">
+		<thead> 
+			<tr>
+				<th>Username</th><th>Date</th><th>Message</th> 
+			</tr>
+		</thead>
+		<tbody>
+			{{#each user}}
+				{{> users}}
+			{{/each}}
+		</tbody>
+	</table>
+	{{> chatform}}
+
+</template>
+
+<template name = "users">
+	<tr>
+		<td>{{username}}</td><td>{{time}}</td><td>{{message}}</td>
+	</tr>
+</template>
+
+<template name="chatform">
+	
+	<h1>Message:</h1>
+	<form id = "createtextform">
+			message: <input type="text" name="name"><br/>
+			
+			<input type="submit">
+		</form>
+
+</template>

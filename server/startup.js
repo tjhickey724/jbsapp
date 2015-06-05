@@ -7,5 +7,12 @@ Meteor.startup(function(){
 		Colors.insert({theColor:"blue", hex:"ff0000"});
 		Colors.insert({theColor:"aqua", hex:"ff0000"});
 		Colors.insert({theColor:"yellow", hex:"ff0000"});
+
 	}
+	if (Message.find({}).count()==0){
+		console.log("test");
+		Message.insert({username: "Amy", time: new Date(), message: "Hi"});
+		
+	}
+
 });
