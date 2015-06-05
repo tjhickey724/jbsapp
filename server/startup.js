@@ -11,7 +11,7 @@ Meteor.startup(function(){
 	}
 	if (Message.find({}).count()==0){
 		console.log("test");
-		Message.insert({username: "Amy", time: new Date(), message: "Hi"});
+		//Message.insert({name: "Amy", time: new Date(), message: "Hi"});
 		
 	}
 

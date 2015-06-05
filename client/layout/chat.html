@@ -18,15 +18,15 @@
 
 <template name = "users">
 	<tr>
-		<td>{{username}}</td><td>{{time}}</td><td>{{message}}</td>
+		<td>{{name}}</td><td>{{time}}</td><td>{{message}}</td>
 	</tr>
 </template>
 
 <template name="chatform">
 	
 	<h1>Message:</h1>
-	<form id = "createtextform">
-			message: <input type="text" name="name"><br/>
+	<form id = "createchatform">
+			message: <input type="text" name="message"><br/>
 			
 			<input type="submit">
 		</form>
