@@ -1,5 +1,13 @@
 <template name = "chat">
 	<h1> Chat </h1>
+	
+	
+	Enter your message: <br/>
+	<form id="enterchat">
+		<input type="text" name="message"><input type="submit">
+	</form>
+	
+
 	<p>
 	{{#each chatfunc}}
 	  {{> chatblock}}
@@ -12,7 +20,7 @@
 <template name="chatblock">
  
    		{{username}}: {{message}}
-   		({{timestamp}})
+   		<br/>({{timestamp}})
    		<hr/> 		
   
 </template>

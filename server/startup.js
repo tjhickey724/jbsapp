@@ -10,10 +10,10 @@ Meteor.startup(function(){
 	}
 
 	if (Chats.find({}).count()==0){
-		Chats.insert({username: "John", timestamp: Date(), message: "hello"});
-		Chats.insert({username: "Pikachu", timestamp: Date(), message: "pika?"});
-		Chats.insert({username: "John", timestamp: Date(), message: "*Throws Pokeball*"});
-		Chats.insert({username: "Pikachu", timestamp: Date(), message: "*Pikachu broke free!*"});
+		Chats.insert({username: "John", timestamp: new Date(), message: "hello"});
+		Chats.insert({username: "Pikachu", timestamp: new Date(), message: "pika?"});
+		Chats.insert({username: "John", timestamp: new Date(), message: "*Throws Pokeball*"});
+		Chats.insert({username: "Pikachu", timestamp: new Date(), message: "*Pikachu broke free!*"});
 
 		
 	}
