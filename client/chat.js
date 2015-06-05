@@ -1,4 +1,5 @@
 Template.chats.helpers({
+	// limit to the last 10, most recent first
 	chatData: function() { return Chats.find({},{sort:{createdAt:-1},limit:10}); }
 });
 
@@ -15,6 +16,6 @@ Template.chat.events({
 				message:chatbox
 			});
 		
-		document.getElementsByName('chatbox').value = '';
+		document.getElementById('chatbox').value = '';
 	}
 })
