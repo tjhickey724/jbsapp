@@ -1,0 +1,34 @@
+<template name="chats">
+	<h1>Chat</h1>
+
+	<p>
+		{{#each chatfunc}}
+  			{{> chatblock}}
+		{{/each}}
+	</p>
+
+	<hr/>
+	<p>
+		{{> chatform}}
+	</p>
+
+</template>
+
+
+<template name="chatblock">
+	<p>
+		{{username}}: {{timestamp}}
+		
+		{{message}}
+		<hr/>
+	</p>
+
+</template>
+
+<template name="chatform">
+	<h3>new chat</h3>
+		<form id="sendmessage">
+			message: <input type="text" name="message"><br/>
+			<input type="submit">
+		</form>
+</template>
