@@ -1,0 +1,38 @@
+<template name = "chat">
+
+
+{{#if currentUser}}
+<h1> Let's Chat! </h1>
+
+<h5> Enter your message here: </h5>
+	<form id = "createmessage">
+			message: <input type = "text" name = "message"> <br/>
+			<input type = "submit">
+	</form>
+
+<ul> Here are the most recent 10 chats: </ul>
+<table class = "table table-condensed">
+	<thead>
+		<tr>
+			<th> Name</th> <th> Time</th> <th> Message </th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each chat}}
+			{{> chatrow}}
+		{{/each}}
+	</tbody>
+</table>
+
+{{else}}
+		<h2>You must be logged in to see the chat</h2>
+{{/if}}
+
+</template>
+
+<template name = "chatrow">
+	<tr>
+		<td> {{username}} </td> <td> {{time}} </td> <td> {{message}} </td>
+	</tr>
+</template>
+
