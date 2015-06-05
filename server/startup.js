@@ -10,7 +10,10 @@ Meteor.startup(function(){
 	}
 
 	if(Chat.find({}).count()==0){
-		Chat.insert({username: "ABC", time: "11:24", message: "HI"});
+		Chat.insert({username: "ABC", time: new Date("6/1/2015"), message: "HI"});
+		Chat.insert({username: "CBA", time: new Date("6/2/2015"), message: "HELLO"});
+		Chat.insert({username: "ABA", time: new Date("5/1/2015"), message: "HEY"});
+		Chat.insert({username: "ACA", time: new Date("4/1/2015"), message: "WHAT'S UP!"});
 	}
 	
 });
