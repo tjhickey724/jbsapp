@@ -8,4 +8,12 @@ Meteor.startup(function(){
 		Colors.insert({theColor:"aqua", hex:"ff0000"});
 		Colors.insert({theColor:"yellow", hex:"ff0000"});
 	}
+
+	if (Message.find({}).count()==0){
+		console.log("test");
+		// create some initial data for the collection...
+		Message.insert({user:"tianci", text:"hello"});
+		Message.insert({user:"tianci", text:"hello!!"});
+
+	}
 });
