@@ -1,7 +1,7 @@
 var myTeam =
   [
     {name:"Tim Hickey"    , email: "tjhickey@brandeis.edu" },
-    {name:"Eyad Fallatah" , email: "fallatah@brandeis.edu" }
+    {name:"Tianci Zhong" , email: "tzhong@brandeis.edu" }
   ];
 
 Template.about.helpers(

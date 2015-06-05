@@ -2,7 +2,6 @@
 <template name="chat">
 <h1>Chat</h1>
 
-
 <table class="table table-hover">
 	<thead>
 		<tr><th>User</th><th>Time</th><th>Message</th></tr>
@@ -14,12 +13,21 @@
 	</tbody>
 </table>
 
-<h1>Enter your IP Address Info</h1>
-<form id="createchat">
-			message: <input type="text" name="text"><br/>
 
-			<input type="submit">
-</form>
+{{#if currentUser}}
+	<form id="createchat">
+		<div class="form-group">
+            <label class="col-lg-3 control-label" for="Message" ><strong>Message:</strong></label>
+            <div class="col-lg-8">
+				<textarea name="text" class="form-control" rows="5" id="Message">{{message}}</textarea>
+				<br>
+				<input type="submit">
+            </div>
+    	</div>
+	</form>
+{{else}}
+	<h3>You must be logged in to post message</h3>
+{{/if}}
 
 </template>
 

@@ -12,8 +12,8 @@ Meteor.startup(function(){
 	if (Message.find({}).count()==0){
 		console.log("test");
 		// create some initial data for the collection...
-		Message.insert({name:"tianci", time: new Date(), text:"hello"});
-		Message.insert({name:"tianci", time: new Date(), text:"hello!!"});
+		Message.insert({name:"tzhong@brandeis.edu", time: new Date(), text:"hello"});
+		Message.insert({name:"tzhong@brandeis.edu", time: new Date(), text:"hello!!"});
 
 	}
 });

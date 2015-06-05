@@ -1,8 +1,26 @@
 <template name="sponsors">
 
-	<h1>We wish we had these sponsors!</h1>
-	{{#each sponsorData}}
-		<hr/>
-		{{name}}: {{amt}} 
-	{{/each}}
+<h1>We wish we had these sponsors!</h1>
+
+<table class="table">
+	<thead>
+	<tr>
+		<th>Name</th><th>Amount</th>
+	</tr>
+	</thead>
+	<tbody>
+		{{#each sponsorData}}
+	  		{{> sponsorrow}}
+		{{/each}}
+	</tbody>
+
+</table>
+
+</template>
+
+<template name="sponsorrow">
+	<tr> 
+		<td>{{name}}</td>
+		<td>{{amt}}</td>
+	</tr> 
 </template>
