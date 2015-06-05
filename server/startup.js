@@ -8,4 +8,8 @@ Meteor.startup(function(){
 		Colors.insert({theColor:"aqua", hex:"ff0000"});
 		Colors.insert({theColor:"yellow", hex:"ff0000"});
 	}
+    if (Chat.find({}).count()==0){
+		// create some initial data for the collection...
+		Colors.insert({username:"red", time:"10:00", message:"Hello world"});
+	}
 });
