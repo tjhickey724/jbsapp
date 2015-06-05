@@ -13,21 +13,25 @@
 	</tbody>
 </table>
 
+<form id="createchat">
+	<div class="form-group">
+        <label class="col-lg-3 control-label" for="Message" ><strong>Message:</strong></label>
 
-{{#if currentUser}}
-	<form id="createchat">
-		<div class="form-group">
-            <label class="col-lg-3 control-label" for="Message" ><strong>Message:</strong></label>
-            <div class="col-lg-8">
+        <div class="col-lg-8">
+            {{#if currentUser}}
 				<textarea name="text" class="form-control" rows="5" id="Message">{{message}}</textarea>
 				<br>
 				<input type="submit">
-            </div>
-    	</div>
-	</form>
-{{else}}
-	<h3>You must be logged in to post message</h3>
-{{/if}}
+			{{else}}
+				<textarea name="text" class="form-control" rows="5" id="Message" placeholder="Please Log in First..." disabled>{{message}}</textarea>
+				<br>
+				<input type="submit" disabled>
+			{{/if}}
+        </div>
+  	</div>
+</form>
+
+
 
 </template>
 
