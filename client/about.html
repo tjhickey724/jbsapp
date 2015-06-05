@@ -1,31 +1,27 @@
 <template name="about">
-<h1>about</h1>
+<h1>About</h1>
 
-Here is some text
-<hr>
-<ul>
-<li>Name: {{name}}</li>
-<li>Email: {{email}}</li>
-<li>Age: {{age}}</li>
-<li>Hometown: {{hometown}}</li>
-</ul>
+I made this page!! {{theTime}}
 <hr/>
-Here is my team
 
-<table class ="table">
+Here is our team:
+<table class="table table-condensed">
 	<thead>
-			<th>Name</th>
-			<th>Email</th>
-			</thead>
-			{{#each team}}
-				{{> teamrow}}
-    		{{/each}}
+		<tr><th>Name</th><th>Email</th></tr>
+	</thead>
+	<tbody>
+{{#each team}}
+  {{> teamrow}}
+{{/each}}
+	</tbody>
 </table>
+
 </template>
-		<template name="teamrow">
-			<tbody>
-				<tr>
-					<td>{{name}}</td> <td>{{email}}</td> 
-				</tr>
-			</tbody>	
-		</template>		
+
+
+<template name="teamrow">
+   <tr>
+   	  <td>{{name}}</td>
+   	  <td>{{email}}</td>
+   </tr>
+</template>
