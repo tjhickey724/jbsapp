@@ -1,3 +1,37 @@
-<template name="Chat">
+<template name="chat">
 	<h1>Chat Page</h1>
+
+	<hr/>
+	{{#each chatLines}}
+		{{> printChat}}
+	{{/each}}
+
+	<hr/>
+	{{> newMessage}}
+</template>
+
+<template name="printChat">
+
+	{{#if currentUser}}
+		<h4>{{username}} says - {{message}}</h4>
+	{{else}}
+		<h3> Log In</h3>
+	{{/if}}
+</template>
+
+
+<template name = "newMessage">
+	<h4>Enter your message</h4>
+	<form id="createChat">
+		name: <input type="text" name="name"><br/>
+		message: <input type="text" name="message"><br/>
+		<input type="submit">
+	</form>
+</template>
+
+<template name="mostRecentChats">
+	Most recent messages
+	{{#each chatLines}}
+		{{> printChat}}
+	{{/each}}
 </template>
