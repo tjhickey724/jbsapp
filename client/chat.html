@@ -1,0 +1,26 @@
+<template name="chat">
+	<h1>Chat Log</h1>
+	<table class="table">
+		<thead>
+			<tr><th>Username</th><th>Message</th><th>Sent</th></tr>
+		</thead>
+		<tbody>
+			{{#each getChats}}
+				{{> messages}}
+			{{/each}}
+		</tbody>
+	</table>
+	<hr/>
+	<form id="sendMessage">
+			Chat now! <input type="text" name="message"><input type="submit">
+	</form>
+</template>
+
+
+<template name="messages">
+	<tr>
+		<td>{{username}}</td>
+		<td>{{message}}</td>
+		<td>{{createdAt}}</td>
+	</tr>
+</template>
