@@ -14,8 +14,9 @@
 	</tbody>
 </table>
 
-<form id="createtextform">
-			message: <input type="text" name="message"><br/>
+<h1>Enter your IP Address Info</h1>
+<form id="createchat">
+			message: <input type="text" name="text"><br/>
 
 			<input type="submit">
 </form>
@@ -24,7 +25,7 @@
 
 <template name = "userrow">
 	<tr>
-		<td>{{user}}</td>
+		<td>{{name}}</td>
 		<td>{{time}}</td>
 		<td>{{text}}</td>
 	</tr>

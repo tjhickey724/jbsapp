@@ -1,59 +1,19 @@
-/*Meteor.chat(function(){
-	if (Message.find({}).count()==0){
-		console.log("test");
-		// create some initial data for the collection...
-		Message.insert({user:"tianci", time:, text:"hello"});
-		Message.insert({user:"tianci", time:, text:"hello!!"});
 
-
-	}
-
+Template.chat.helpers({
+	users: function(){return Message.find({},{sort:{time:-1},limit:10})}
 })
 
 Template.chat.events({
-	"submit #editchat": function(event){
-		chat.preventDefault();
+	"submit #createchat": function(event){
+		event.preventDefault();
 
-		var user = chat.target.user.value;
-		var time = chat.target.time.value;
+		var name = Meteor.user().emails[0].address;
+		/*var name = Meteor.user().profile.username;*/
+		var text = event.target.text.value;
+		var time = new Date();
 		console.log(JSON.stringify(this));
 
-		IPAddresses.update(this._id,
-			{$set:{name:name, ip:ip}});
+		Message.insert({name:name, time:time, text:text});
 		
 	}
-})*/
-
-
-Template.chat.helpers({
-	users: function(){return Message.find();}
 })
-
-/*Template.chat.events({
-	"submit #editipform": function(event){
-		event.preventDefault();
-
-		var name = event.target.name.value;
-		var ip = event.target.ip.value;
-		console.log(JSON.stringify(this));
-
-		IPAddresses.update(this._id,
-			{$set:{name:name, ip:ip}});
-
-		Router.go('/iptable');
-		
-	},
-
-		"submit #createipform": function(event){
-		event.preventDefault();
-
-		var name = event.target.name.value;
-		var ip = event.target.ip.value;
-		console.log(JSON.stringify(this));
-
-		IPAddresses.insert({uid:Meteor.userId(), name:name, ip:ip});
-
-		Router.go('/iptable');
-		
-	}
-})*/
