@@ -11,8 +11,8 @@ Meteor.startup(function(){
     
     if (Chats.find({}).count()==0)
     {
-        Chats.insert({userName:"test",createdAt:"00:00",message:"hi"});
-        Chats.insert({userName:"test2",createdAt:"00:00",message:"hi"});
-        Chats.insert({userName:"test3",createdAt:"00:00",message:"hi"});
+        Chats.insert({userName:"test",createdAt:Date(),message:"hi"});
+        Chats.insert({userName:"test2",createdAt:Date(),message:"hello"});
+        Chats.insert({userName:"test3",createdAt:Date(),message:"hi"});
     }
 });
