@@ -1,0 +1,33 @@
+<template name="chat">
+	<h1>Chat</h1>
+	<hr/>
+	<table class="table table-hover">
+		<thead>
+		<tr><th>Name</th><th>Message</th></tr>
+		</thead>
+		<tbody>
+		{{#each chatLines}}
+
+			{{> message}}
+		{{/each}}
+	</tbody>
+</table>
+
+<hr/>
+
+<form name="message" action="">
+    <input name="usermsg" type="text" id="usermsg"/>
+    <input message="submitmsg" type="submit"  id="submitmsg" value="Submit Message" />
+</form>
+
+</template>
+
+<template name="printChat">
+	<tr>
+		<td>{name)</td>
+		<td>(message)</td>
+	</tr>
+
+</template>
+
+
