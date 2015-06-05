@@ -1,0 +1,25 @@
+<template name= "chat">
+
+<h1>Let's Chat!</h1>
+
+<ul>Here are the most recent 10 chats</ul>
+<table class="table table-condensed">
+	<thead>
+		<tr>
+			<th>Name</th><th>Time</th><th>message</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each chat}}
+		  {{> chatrow}}
+		 {{/each}}
+	</tbody>
+</table>
+
+</template>
+
+<template name="chatrow">
+	<tr>
+		<td>{{username}}: {{time}} {{message}}</td>
+	</tr>
+</template>
