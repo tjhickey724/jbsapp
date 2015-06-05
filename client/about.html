@@ -1,0 +1,31 @@
+<template name="about">
+<h1>about</h1>
+
+Here is some text
+<hr>
+<ul>
+<li>Name: {{name}}</li>
+<li>Email: {{email}}</li>
+<li>Age: {{age}}</li>
+<li>Hometown: {{hometown}}</li>
+</ul>
+<hr/>
+Here is my team
+
+<table class ="table">
+	<thead>
+			<th>Name</th>
+			<th>Email</th>
+			</thead>
+			{{#each team}}
+				{{> teamrow}}
+    		{{/each}}
+</table>
+</template>
+		<template name="teamrow">
+			<tbody>
+				<tr>
+					<td>{{name}}</td> <td>{{email}}</td> 
+				</tr>
+			</tbody>	
+		</template>		
