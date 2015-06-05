@@ -1,0 +1,19 @@
+<template name = "chat">
+	<h1> Chat </h1>
+
+<body>
+	{{#each chatfunc}}
+	  {{> chatblock}}
+	{{/each}}
+</body>
+
+</template>
+
+
+<template name="chatblock">
+   <p>
+   		{{username}} {{timestamp}}: {{message}}
+   		<hr/>
+   		
+   </p>
+</template>
