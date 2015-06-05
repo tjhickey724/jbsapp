@@ -2,6 +2,7 @@
 <h1>Chat</h1>
 {{> display}}
 
+
 </template>
 
 <!-- most recent 10 messages-->
@@ -11,7 +12,11 @@
             <th>User</th><th>Time</th><th>Message</th>
         </thead>
         <tbody>
+            {{#if currentUser}}
                 {{> chats}}
+            {{else}}
+            <h1>Login Now.</h1>
+            {{/if}}
         </tbody>
     </table>
 </template>
@@ -20,4 +25,15 @@
     {{#each chatData}}
     <tr><td>{{userName}}</td><td>{{createdAt}}</td><td>{{message}}</td></tr>
     {{/each}}
+    <tr>{{> chatinput}}</tr>
+</template>
+
+<template name="chatinput">
+    <form id="chatinputform">
+        <input type="text" name="message" placeholder="Type the Message Here">
+        <input type="submit" class="btn btn-default">
+    </form>
+    <form id="clearinput">
+        <input type="submit" class="btn btn-default">
+    </form>
 </template>
