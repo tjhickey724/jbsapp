@@ -1,5 +1,15 @@
 Template.chat.helpers({
-	chatfunc: function(){return Chats.find();}
+	chatfunc: function()
+	{
+		{
+			return Chats.find
+			({},
+				{
+					sort:{timestamp:-1}, limit:10
+				}
+			)
+		} 
+	}
 })
 
 Template.chat.events({
@@ -13,8 +23,10 @@ Template.chat.events({
 		var username = Meteor.user().emails[0].address;	
 
 		var timestamp = new Date();
+
 		Chats.insert({username: username, timestamp: timestamp, message: message});	
 		
+
 
 	}
 

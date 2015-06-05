@@ -9,12 +9,13 @@ Meteor.startup(function(){
 		Colors.insert({theColor:"yellow", hex:"ff0000"});
 	}
 
-	if (Chats.find({}).count()==0){
-		Chats.insert({username: "John", timestamp: new Date(), message: "hello"});
-		Chats.insert({username: "Pikachu", timestamp: new Date(), message: "pika?"});
-		Chats.insert({username: "John", timestamp: new Date(), message: "*Throws Pokeball*"});
-		Chats.insert({username: "Pikachu", timestamp: new Date(), message: "*Pikachu broke free!*"});
+	//DATA FOR TESTING
+	//if (Chats.find({}).count()==0){
+		//Chats.insert({username: "John", timestamp: new Date(), message: "hello"});
+		//Chats.insert({username: "Pikachu", timestamp: new Date(), message: "pika?"});
+		//Chats.insert({username: "John", timestamp: new Date(), message: "*Throws Pokeball*"});
+		//Chats.insert({username: "Pikachu", timestamp: new Date(), message: "*Pikachu broke free!*"});
 
 		
-	}
+	//}
 });
