@@ -1,9 +1,23 @@
 <template name="chat">
 <h1>Chat</h1>
-
+{{> display}}
 
 </template>
 
 <!-- most recent 10 messages-->
 <template name="display">
+    <table class="table table-hover">
+        <thead>
+            <th>User</th><th>Time</th><th>Message</th>
+        </thead>
+        <tbody>
+                {{> chats}}
+        </tbody>
+    </table>
+</template>
+
+<template name="chats">
+    {{#each chatData}}
+    <tr><td>{{userName}}</td><td>{{createdAt}}</td><td>{{message}}</td></tr>
+    {{/each}}
 </template>
