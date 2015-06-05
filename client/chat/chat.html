@@ -1,19 +1,18 @@
 <template name = "chat">
 	<h1> Chat </h1>
-
-<body>
+	<p>
 	{{#each chatfunc}}
 	  {{> chatblock}}
 	{{/each}}
-</body>
+	</p>
 
 </template>
 
 
 <template name="chatblock">
-   <p>
-   		{{username}} {{timestamp}}: {{message}}
-   		<hr/>
-   		
-   </p>
+ 
+   		{{username}}: {{message}}
+   		({{timestamp}})
+   		<hr/> 		
+  
 </template>
