@@ -1,0 +1,35 @@
+<template name="chat">
+<h1>JBS Chat Group</h1>
+{{#if currentUser}}
+{{> chatinput}}
+<table class="table table-striped">
+	<tbody>
+		{{#each chats}}
+			{{> chatrow}}
+		{{/each}}
+	</tbody>
+</table>
+{{else}}
+<h2>You must be logged in to access the chat feature</h2>
+{{/if}}
+</template>
+
+<template name="chatinput">
+	<form id="chatinput" class="form-horizontal">
+	    <div class="form-group">
+		   <div class="col-sm-11">
+			   <input type="text" class="form-control" id="chatline" name="chatline" placeholder="Enter chat">	  
+		   </div>
+		   <button type="submit" class="btn btn-default">Send</button>
+	     </div>
+		 
+	</form>
+</template>
+
+<template name="chatrow">
+	<tr>
+		<td>{{username}}</td>
+		<td>{{chatline}}</td>
+		<td>{{createdAt}}</td>
+	</tr>
+</template>

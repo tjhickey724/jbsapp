@@ -8,4 +8,12 @@ Meteor.startup(function(){
 		Colors.insert({theColor:"aqua", hex:"ff0000"});
 		Colors.insert({theColor:"yellow", hex:"ff0000"});
 	}
+	
+	if (Chats.find({}).count()==0){
+		/*
+		Chats.insert({username:"bob",createdAt:new Date(), chatline:"Hey this works!!"});
+		Chats.insert({username:"maria",createdAt:new Date(), chatline:"Yes this works!!"});
+		Chats.insert({username:"bob",createdAt:new Date(), chatline:"See you soon"});
+		*/
+	}
 });
