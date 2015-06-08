@@ -3,9 +3,10 @@
 		<title> Chat Room </title>
 	</head>
 	<body>
+		<h1> JBS Summer Chat Room </h1>
 		<table class="table table-hover">
 			<thead>
-				<tr><th>UserName</th><th>Message</th></tr>
+				<tr><th>created at</th><th>UserName</th><th>Message</th></tr>
 			</thead>
 			<tbody>
 				{{#each messages}}
@@ -13,16 +14,20 @@
 				{{/each}}
 			</tbody>
 		</table>
+
+		<form id= "addmessage">
+		message: <input type= "text" class= "form-control"  name= "message" placeholder= "type message here..."><br/>
+		<button type ="submit">apple</button>
+		</form>	
+
 	</body>
 </template>
 
 
 <template name="messageRow">
 	<tr>
+		<td>{{createdAt}}</td>
 		<td>{{username}}</td>
 		<td>{{message}}</td>
-		
-			
-		
 	</tr>
 </template>

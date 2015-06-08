@@ -11,9 +11,10 @@ Meteor.startup(function(){
 
 //Populates with initial fake data for testing
 
-	if(Chats.find({}).count()==0) {
-		Chats.insert({username:"bob", createdAt: Date(), message: "Hello World"});
-		Chats.insert({username:"Tim", createdAt: Date(), message: "Hello McDonalds"});
-		Chats.insert({username:"Sam", createdAt: Date(), message: "Hello Chipotle"});
-	}
+	// if(Chats.find({}).count()==0) {
+	// 	Chats.insert({username:"bob", createdAt: Date(), message: "Hello World"});
+	// 	Chats.insert({username:"Tim", createdAt: Date(), message: "Hello McDonalds"});
+	// 	Chats.insert({username:"Sam", createdAt: Date(), message: "Hello Chipotle"});
+	// 	Chats.insert({username:"dewar", createdAt: Date(), message: "Hello Chipotle"});
+	// }
 });
