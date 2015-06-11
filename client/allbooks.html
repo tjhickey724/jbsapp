@@ -1,0 +1,27 @@
+<template name="allbooks">
+<h1>All Books</h1>
+<div>
+	<ul class="nav nav-pills">
+		<li role="presentation" class="active"><a href="#">Most recently added</a></li>
+		<li role="presentation"><a href="#">Title</a></li>
+	</ul>
+</div>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Author</th>
+			<th>Shelf</th>
+			<th>ISBN</th>
+			<th>Tags</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each booksData}}
+		<tr>
+			{{> book}}
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+</template>

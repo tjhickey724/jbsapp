@@ -1,0 +1,72 @@
+<template name="mybooks">
+<h1>My Books</h1>
+{{#if currentUser}}
+<div>
+	<a class="btn btn-warning" href="#addbook" data-toggle="collapse">Add a book</a>
+
+	<div id="addbook" class="collapse">
+		<form class="form-horizontal" id="addbookform">
+			<div class="form-group">
+				<label for="bookTitle" class="col-sm-2 control-label">Title</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="bookTitle" name="bookTitle" placeholder="Title">
+				</div>
+				</div>
+			<div class="form-group">
+				<label for="bookAuthor" class="col-sm-2 control-label">Author</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="bookAuthor" name="bookAuthor" placeholder="Author">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="bookShelf" class="col-sm-2 control-label">Shelf</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="bookShelf" name="bookShelf" placeholder="Shelf">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="bookISBN" class="col-sm-2 control-label">ISBN</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="bookISBN" name="bookISBN" placeholder="ISBN">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="bookTags" class="col-sm-2 control-label">Tags</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="bookTags" name="bookTags" placeholder="Tags">
+					<p class="help-block">Separate tags with commas, no spaces next to the commas</p>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-default">Add</button>
+				</div>
+			</div>
+			<hr />
+		</form>
+	</div>
+</div>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Author</th>
+			<th>Shelf</th>
+			<th>ISBN</th>
+			<th>Tags</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each booksData}}
+		<tr>
+			{{> book}}
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+
+{{else}}
+<p class="bg-danger">You might want to try logging in before doing that</p>
+{{/if}}
+</template>

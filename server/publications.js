@@ -1,7 +1,6 @@
 Meteor.publish("theProfiles",function(){return Profiles.find();});
-Meteor.publish("theIPs",function(){return IPAddresses.find();});
-Meteor.publish("theColors",function(){return Colors.find();});
 Meteor.publish("theChats",function(){return Chats.find();});
+Meteor.publish("theBooks",function(){return Books.find();});
 
 
 Meteor.publish("userData", function () {

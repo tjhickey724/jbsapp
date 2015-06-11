@@ -21,11 +21,15 @@
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      	<ul class="nav navbar-nav">
-					<li><a href="{{pathFor 'people'}}">People</a></li>
 					<li><a href="{{pathFor 'about'}}">About Us</a></li>
-					<li><a href="{{pathFor 'sponsors'}}">Sponsors</a></li>
-					<li><a href="{{pathFor 'chat'}}">Chat</a></li>
-					<li><a href="{{pathFor 'iptable'}}">Local Servers</a></li>
+					<li><a href="{{pathFor 'allbooks'}}">All Books</a></li>
+					{{#if currentUser}}
+					<li><a href="{{pathFor 'people'}}">Users</a></li>
+					<li><a href="{{pathFor 'mybooks'}}">My Books</a></li>
+					<li><a href="{{pathFor 'me'}}">My Profile</a></li>
+					{{else}}
+					<li><p class="navbar-text">Please log in for more</p></li>
+					{{/if}}
 				</ul>
 			    <ul class="nav navbar-nav navbar-right">
 			            {{> loginButtons}} <!-- here -->
