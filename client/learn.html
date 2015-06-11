@@ -1,0 +1,35 @@
+<template name="learn">
+
+<div class="bg-primary">
+	<h1>Learn new words!</h1>
+</div>
+
+<blockquote>
+  <p>You can type in whatever Japanese words you want to learn.</p>
+  <footer>You can check your pronunciation by using 'Dictate', and you can get the accuracy for your pronunciation.</footer>
+</blockquote>
+
+<h4><mark>Give the Japanese characters you want to learn:</mark></h4>
+<input type="text" name="words" id="words">
+	<button class="say">Say</button>
+<hr/>
+
+
+<h4><mark>Press 'Dictate' to speak:</mark></h4>
+
+<div>
+	<a href="#" id="start_button"><h4>Dictate</h4></a>
+</div>
+
+<hr/>
+
+<div id="results">
+	<h4><mark>Results:</mark></h4>
+	<small>Say 'Sayōnara' to stop, and 'Yomimasu' to read the line.</small>
+
+    <pre><span id="final_span" class="final"></span>
+    <span id="interim_span" class="interim"></span></pre>
+</div>
+
+</template>
+

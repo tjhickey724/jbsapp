@@ -1,0 +1,25 @@
+<template name= "chat">
+
+{{#if currentUser}}
+
+<div class="bg-primary">
+	<h1>Let's Chat!</h1>
+</div>
+
+<blockquote>
+  <p>Let's share your ideas with others for the anime...</p>
+  <footer>Just leave your ideas and go to 'Results' to see any comments</footer>
+</blockquote>
+
+
+<h4><mark>Enter your message here:</mark></h4>
+	<form id="createmessage">
+			message: <input type="text" name="message"><br/>
+			<input type="submit">
+	</form>
+
+{{else}}
+		<h2>You must be logged in to see the user profiles</h2>
+{{/if}}
+
+</template>
