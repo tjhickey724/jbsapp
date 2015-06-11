@@ -20,6 +20,11 @@
 
 		<div class="col-md-4 bg-success">
 			<h3>Recommended reading</h3>
+			<ul>
+				{{#each recommendedData}}
+				<li><em>{{title}}</em> by {{author}}</li>
+				{{/each}}
+			</ul>
 		</div>
 
 		<div class="col-md-4 bg-danger">
