@@ -1,27 +1,27 @@
 <template name="about">
-<h1>About</h1>
+<h1>Possible Suspects</h1>
 
-I made this page!! {{theTime}}
 <hr/>
 
-Here is our team:
-<table class="table table-condensed">
+<table class="table table-hover">
 	<thead>
-		<tr><th>Name</th><th>Email</th></tr>
+		<tr><th>Suspects</th></tr>
 	</thead>
 	<tbody>
-{{#each team}}
-  {{> teamrow}}
-{{/each}}
+	{{#each culprits}}
+	  {{> teamrow}}
+	{{/each}}
 	</tbody>
 </table>
-
+<form id= "addSuspects">
+			<input type= "text" class= "form-control"  name= "suspect" placeholder= "type culprit here...">
+			<button type= "submit"> Submit </button> 
+		</form>	
 </template>
 
 
 <template name="teamrow">
    <tr>
-   	  <td>{{name}}</td>
-   	  <td>{{email}}</td>
+   	  <td>{{ culprits }}</td>
    </tr>
 </template>

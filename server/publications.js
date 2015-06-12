@@ -1,6 +1,7 @@
 Meteor.publish("theProfiles",function(){return Profiles.find();});
 Meteor.publish("theIncidents",function(){return Incidents.find();});
-
+Meteor.publish("theIncidents2",function(){return Incidents2.find();});
+Meteor.publish("theSuspects",function(){return Suspects.find();});
 
 
 Meteor.publish("userData", function () {

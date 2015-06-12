@@ -38,5 +38,30 @@ Template.incidents.events({
 				Incidents.insert({createdAt: h +":"+ m + "  " + today.getMonth() + "/" + today.getDay() + "/" + today.getYear()%2000, userName:Meteor.user().profile.userName, message: text, likes: 0});
 			}
 			event.target.message.value= "";
+		},
+
+		"submit #addmessage2": function(event) {
+			event.preventDefault();	
+			var today = new Date();
+		    var h = today.getHours();
+		    var m = today.getMinutes();
+		    m = checkTime(m);
+		    function checkTime(i) {
+		    if (i < 10) {
+		        i = "0" + i;
+		    }
+		    return i;
+			};
+			event.preventDefault();
+			var text = event.target.message.value;
+			console.log(JSON.stringify(this));
+			if(Meteor.user() == null) {
+				window.alert("You need to login first");
+			} else if(Meteor.user().profile.userName == undefined) {
+				Incidents2.insert({createdAt: h +":"+ m + "  " + today.getMonth() + "/" + today.getDay() + "/" + today.getYear()%2000,  userName:Meteor.user().emails[0].address, message: text, likes: 0});
+			} else {
+				Incidents2.insert({createdAt: h +":"+ m + "  " + today.getMonth() + "/" + today.getDay() + "/" + today.getYear()%2000, userName:Meteor.user().profile.userName, message: text, likes: 0});
+			}
+			event.target.message.value= "";
 		}
 })

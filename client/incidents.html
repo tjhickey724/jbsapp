@@ -27,8 +27,32 @@
 			<button type= "submit"> Submit </button> 
 		</form>	
 	</div>
-	</body>
+	
 
+
+<div class= "row">
+
+	<img id= "notMove" class="col-md-3" src= "images/IMG_0550.JPG"/>
+
+		<table class= "table table-condensed spacing">
+			<thead>
+				<th>June 1st 2015 Incident #1, what the...  </th>
+			</thead>
+			<tbody>
+				{{#each messages}}
+					{{> userMessage}}
+				{{ /each }}
+			</tbody>
+		</table>
+		</div>
+			
+	<div class= "row ">
+		<form id= "addmessage2">
+			<textarea type= "text" class= "form-control"  name= "message" placeholder= "type message here..."></textarea><br/>
+			<button type= "submit"> Submit </button> 
+		</form>	
+	</div>
+	</body>
 </template>
 
 
