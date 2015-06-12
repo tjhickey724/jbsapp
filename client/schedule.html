@@ -1,0 +1,31 @@
+<template name="Schedule">
+	<h1>Schedule</h1>
+	<p>Keep track of your schedule!</p>
+
+	<hr/>
+	<table  class="table table-hover">
+		<thead>
+			<tr>
+				<th>Time</th>
+				<th>Remind</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each reminder}}
+				{{> remindLine}}
+			{{/each}}
+		</tbody>
+	</table>
+	<a href="{{pathFor 'addSchedule'}}">Add new events to your schedule!</a>
+</template>
+		
+<template name="remindLine">
+	<tr>
+		<td>{{time}}</td>
+		<td>{{remind}}</td>
+	</tr>
+</template>
+
+
+
+		

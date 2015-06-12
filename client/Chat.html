@@ -1,0 +1,39 @@
+<template name="Chat">
+	<h1>Chat</h1>
+	<p>Welcome to 2015 JBS Chatroom</p>
+	Participants:
+
+	<hr/>
+	<table  class="table table-hover">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Text</th>
+				<th>Time</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each chatBlock}}
+				{{> chatLine}}
+			{{/each}}
+		</tbody>
+	</table>
+
+	<hr/>
+	{{> chatInsert}}
+</template>
+		
+<template name="chatLine">
+	<tr>
+		<td>{{username}}</td>
+		<td>{{text}}</td>
+		<td>{{createdAt}}</td>
+	</tr>
+</template>
+
+<template name= "chatInsert">
+		<form id="entertext">
+			Text: <input type="text" name="conversationHistory"> 
+			<input type="submit" id="submitButton">
+		</form>
+</template>
