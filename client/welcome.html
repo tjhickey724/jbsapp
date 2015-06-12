@@ -1,35 +1,66 @@
 <template name="welcome">
 <h1>Bookrack <small>BETA</small></h1>
-	<div class="row bg-info">
-		<div class="col-xs-8 bg-info">		
-			<p></p>
+	<div class="row">
+		<div class="col-md-8">		
+			<img src="/images/colorfulbooks.jpg" alt="Colorful books on a shelf" class="img-responsive">
+			<!-- From http://commons.wikimedia.org/wiki/File:Colorful_books.jpg, Creative Commons license -->
+		</div>
+
+		<div class="col-md-4 hidden-xs">
+			<blockquote>
+				<p>Books on the bookshelves<br />
+				And stacked on the floor<br />
+				Books kept in baskets<br />
+				And propped by the door<br />
+				Books in neat piles<br />
+				And in disarray<br />
+				Books tucked in closets<br />
+				And books on display<br />
+				Books filling crannies<br />
+				And books packed in nooks<br />
+				Books massed in windows<br />
+				And mounded in crooks<br />
+				Libraries beckon<br />
+				And bookstores invite<br />
+				But book-filled rooms welcome<br />
+				Us back home at night</p>
+				<footer><cite>L.R. Knost</cite></footer>
+			</blockquote>
 		</div>
 		
-		<div class="col-xs-4 bg-primary">
-			<h2>Bookrack</h2>
-			<p>There&rsquo;s so many books in the world to read. Let us help you catalog them here.</p>
-			
-		</div>
+		
 		
 	</div>
 
-	<div class="row">
+	<div class="row bg-warning">
 		<div class="col-md-4 bg-warning">
-			<h3>Shelves you might like</h3>
+			<h2>Bookrack</h2>
+			<p>There&rsquo;s so many books in the world to read. Let us help you catalog them here, simply and easily.</p>
 		</div>
 
 		<div class="col-md-4 bg-success">
-			<h3>Recommended reading</h3>
+			<h3>Recently added</h3>
 			<ul>
-				{{#each recommendedData}}
+				{{#each recentData}}
 				<li><em>{{title}}</em> by {{author}}</li>
 				{{/each}}
 			</ul>
 		</div>
 
-		<div class="col-md-4 bg-danger">
-			<h3>Quote of the day</h3>
+		<div class="col-md-4 bg-warning">
+			<h3>Books you might like</h3>
+			{{#if currentUser}}
+			<ul>
+				{{#each recommendedData}}
+				<li><em>{{title}}</em> by {{author}}</li>
+				{{/each}}
+			</ul>
+			<p>Recommendations are based on your shelving</p>
+			{{else}}
+			<p>You need to be logged in!</p>
+			{{/if}}
 		</div>
+
 	</div>
 
 	<!--      This is a comment ... Lets create another row with 3 columns

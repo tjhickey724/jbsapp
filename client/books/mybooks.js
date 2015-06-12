@@ -13,6 +13,11 @@ Template.mybooks.events({
 		var s = event.target.bookShelf.value;
 		var i = event.target.bookISBN.value;
 		var g = event.target.bookTags.value.split(",");
+		var stat = event.target.bookStatus.value;
+
+		if (s === "") {
+			s = "default";
+		}
 
 		Books.insert({
 			title:t,
@@ -20,6 +25,7 @@ Template.mybooks.events({
 			shelf:s,
 			isbn:i,
 			tags:g,
+			status:stat,
 			addedBy:Meteor.userId(),
 			addedAt:new Date()
 		});

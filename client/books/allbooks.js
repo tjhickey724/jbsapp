@@ -3,3 +3,7 @@ Template.allbooks.helpers({
 		return Books.find( {}, {sort: {addedAt:-1} } );
 	}
 });
+
+Template.allbooks.events({
+
+});

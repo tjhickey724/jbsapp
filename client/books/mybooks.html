@@ -8,33 +8,41 @@
 		<form class="form-horizontal" id="addbookform">
 			<div class="form-group">
 				<label for="bookTitle" class="col-sm-2 control-label">Title</label>
-				<div class="col-sm-10">
+				<div class="col-sm-8">
 					<input type="text" class="form-control" id="bookTitle" name="bookTitle" placeholder="Title">
 				</div>
 				</div>
 			<div class="form-group">
 				<label for="bookAuthor" class="col-sm-2 control-label">Author</label>
-				<div class="col-sm-10">
+				<div class="col-sm-8">
 					<input type="text" class="form-control" id="bookAuthor" name="bookAuthor" placeholder="Author">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="bookShelf" class="col-sm-2 control-label">Shelf</label>
-				<div class="col-sm-10">
+				<div class="col-sm-3">
 					<input type="text" class="form-control" id="bookShelf" name="bookShelf" placeholder="Shelf">
 				</div>
-			</div>
-			<div class="form-group">
+
 				<label for="bookISBN" class="col-sm-2 control-label">ISBN</label>
-				<div class="col-sm-10">
+				<div class="col-sm-3">
 					<input type="text" class="form-control" id="bookISBN" name="bookISBN" placeholder="ISBN">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="bookTags" class="col-sm-2 control-label">Tags</label>
-				<div class="col-sm-10">
+				<div class="col-sm-3">
 					<input type="text" class="form-control" id="bookTags" name="bookTags" placeholder="Tags">
 					<p class="help-block">Separate tags with commas, no spaces next to the commas</p>
+				</div>
+			
+				<label for="bookStatus" class="col-sm-2 control-label">Status</label>
+				<div class="col-sm-3">
+					<select class="form-control" name="bookStatus" id="bookStatus">
+						<option>Want to read</option>
+						<option>Currently reading</option>
+						<option>Finished</option>
+					</select>
 				</div>
 			</div>
 			<div class="form-group">
@@ -55,6 +63,8 @@
 			<th>Shelf</th>
 			<th>ISBN</th>
 			<th>Tags</th>
+			<th>Status</th>
+			<th>&nbsp;</th>
 		</tr>
 	</thead>
 	<tbody>
