@@ -1,4 +1,64 @@
-<Template>
-<h1>Chat Room</h1>
+<template name="chat">
+<br><br><br><br>
+<h1>Chat</h1>
 
-</Template>
+<table class="table table-hover">
+	<thead>
+		<tr><th>User</th><th>Time</th><th>Message</th></tr>
+	</thead>
+	<tbody>
+		{{#each users}}
+			{{> userrow}}
+		{{/each}}
+	</tbody>
+</table>
+
+<form id="createchat">
+	<div class="form-group">
+        <label class="col-lg-11 control-label" for="Message" ><strong>Message:</strong></label>
+
+        <div class="col-lg-11">
+            {{#if currentUser}}
+				<textarea name="text" class="form-control" rows="5" id="Message">{{message}}</textarea>
+				<br>
+				<input type="submit">
+			{{else}}
+				<textarea name="text" class="form-control" rows="5" id="Message" placeholder="Please Log in First..." disabled>{{message}}</textarea>
+				<br>
+				<input type="submit" disabled>
+			{{/if}}
+        </div>
+  	</div>
+</form>
+
+<!-- 	<nav>
+  		<ul class="pagination">
+    		<li>
+      			<a href="#" aria-label="Previous">
+       				 <span aria-hidden="true">&laquo;</span>
+      			</a>
+    		</li>
+    		<li><a href="#">1</a></li>
+    		<li><a href="#">2</a></li>
+    		<li><a href="#">3</a></li>
+    		<li><a href="#">4</a></li>
+    		<li><a href="#">5</a></li>
+    		<li>
+      			<a href="#" aria-label="Next">
+       			 <span aria-hidden="true">&raquo;</span>
+      			</a>
+    		</li>
+  		</ul>
+	</nav> -->
+
+
+</template>
+
+<template name = "userrow">
+	<tr>
+		<td>{{name}}</td>
+		<td>{{time}}</td>
+		<td>{{text}}</td>
+	</tr>
+</template>
+

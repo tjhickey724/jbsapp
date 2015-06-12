@@ -1,0 +1,26 @@
+<Template name = "college">
+<br><br><br><br>
+<h1>College List</h1>
+
+<div class="table-responsive">
+<table class="table table-hover">
+	<thead>
+		<tr><th>College</th><th>Early Decision</th><th>Regular Decision</th></tr>
+	</thead>
+	<tbody>
+		{{#each collegeinfo}}
+			{{> collegerow}}
+		{{/each}}
+	</tbody>
+</table>
+</div>
+
+</Template>
+
+<template name = "collegerow">
+	<tr>
+		<td>{{collegename}}</td>
+		<td>{{ea}}</td>
+		<td>{{rd}}</td>
+	</tr>
+</template>
