@@ -1,0 +1,35 @@
+<template name="Chat">
+<h1>ChatRoom</h1>
+
+
+<a href="{{pathFor 'Chatform'}}">Say something</a>
+<hr/>
+<table class="table table-hover">
+	<thead>
+		<tr><th>name</th><th>nickname</th><th>time</th><th>message</th></tr>
+	</thead>
+	<tbody>
+		{{#each Chat}}
+			{{> iChat}}
+		{{/each}}
+	</tbody>
+</table>
+
+<hr/>
+</template>
+
+
+<template name="iChat">
+	<tr>
+		<td>{{username}}</td>
+        <td>{{nickname}}</td>
+		<td>{{time}}</td>
+        <td>{{message}}</td>
+		<td>
+			{{#if isTheChat}} 
+			<span class="glyphicon glyphicon-remove jbsapp-delete-icon" aria-hidden="true"></span>
+			{{/if}}
+		</td>
+	</tr>
+</template>
+
