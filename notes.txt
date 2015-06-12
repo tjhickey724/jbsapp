@@ -1,0 +1,8 @@
+Notes:
+1) goal is to connect Profiles to the accounts 
+ a) create a myprofile page which allows the user to view and modify her profile
+ b) add a userid to the Profiles database where the user can add extra profile info
+ c) get rid of fixture data ..
+
+2) add the chat features back in
+

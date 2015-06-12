@@ -1,0 +1,42 @@
+<template name= "incidents">
+	<head>
+		<title>
+			Reporting Incidents
+		</title>
+	</head>
+	<body>
+			<div class= "row">
+
+	<img id= "notMove" class="col-md-3" src= "images/IMG_0586.JPG"/>
+
+		<table class= "table table-condensed spacing">
+			<thead>
+				<th>June 8th 2015 Incident #2, Progress?  </th>
+			</thead>
+			<tbody>
+				{{#each messages}}
+					{{> userMessage}}
+				{{ /each }}
+			</tbody>
+		</table>
+		</div>
+			
+	<div class= "row ">
+		<form id= "addmessage">
+			<textarea type= "text" class= "form-control"  name= "message" placeholder= "type message here..."></textarea><br/>
+			<button type= "submit"> Submit </button> 
+		</form>	
+	</div>
+	</body>
+
+</template>
+
+
+<template name= "userMessage">
+	<tr>
+		<td> {{message}} </td>
+	</tr>
+	<tr>
+		<td class= "userInformationPost" align= ""> Posted by: {{userName}} @ {{createdAt}} <span class= "glyphicon glyphicon-thumbs-up" id="thumbsUp">{{likes}} </span> {{create}} </td>
+	</tr>
+</template>

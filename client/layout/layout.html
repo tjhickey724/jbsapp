@@ -1,0 +1,29 @@
+<template name="layout">
+	<div class="container">
+		
+		<!-- Here is the standard Bootstrap code for a Navigation bar taken directly from getbootstrap.com/components -->
+		<div class ="header clearfix">
+		<nav>
+			 <a class="navbar-brand" id="websiteName" href="{{pathFor 'welcome'}}">Parking Job</a>
+	          <ul class="nav nav-pills pull-center" >
+	          		<li><a href="{{pathFor 'people'}}">People</a></li>
+			  		<li><a href="{{pathFor 'incidents'}}">Incidents</a></li>
+			  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      		<ul class="nav navbar-nav">
+					</ul>
+			  <ul class="nav navbar-nav navbar-right">
+			           {{> loginButtons}} <!-- here -->
+			  </ul>				
+		      </div><!-- /.navbar-collapse -->
+	          	</ul>
+	          	<hr/>
+	    </nav>
+		</div>
+		<!-- Here is where the actual content of the page gets inserted by the router! -->
+		{{> yield}}
+		</div>
+	<hr/>
+	<footer>
+		<div class= "container">Created By Dewar<img src="images/download.jpeg" width= "50" height= "50"></div>
+	</footer>
+</template>
