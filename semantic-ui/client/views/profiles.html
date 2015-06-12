@@ -1,0 +1,29 @@
+<template name="profiles">
+	<div class="ui page grid">
+		<div class="column">
+			<div class="container">
+			<a href="{{pathFor 'addprofile'}}">-&gt; Add Profiles...</a>
+			<table class="ui table">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Class</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{> renderprofiles}}
+				</tbody>
+			</table>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="renderprofiles">
+	{{#each person}}
+		<tr>
+			<td>{{firstname}} {{lastname}}</td>
+			<td>{{classvar}}</td>
+		</tr>
+	{{/each}}
+</template>

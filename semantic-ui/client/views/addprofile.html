@@ -1,0 +1,39 @@
+<template name="addprofile">
+	<div class="ui page grid">
+		<div class="column">
+			{{> formeditprofile}}
+		</div>
+	</div>
+</template>
+
+<template name="formeditprofile">
+	<form class="ui form" id="editform">
+		<h3 class="ui dividing header">Edit Profile</h3>
+		<div class="two fields">
+			<div class="field">
+				<label>Name</label>
+				<div class="two fields">
+					<div class="field">
+						<input type="text" name="firstname" placeholder="First Name">
+					</div>
+					<div class="field">
+						<input type="text" name="lastname" placeholder="Last Name">
+					</div>
+				</div>
+			</div>
+			<div class="field">
+				<label>Class</label>
+				<div class="ui selection dropdown">
+					<input type="hidden" name="classvar">
+					<div class="default text">Class</div>
+					<i class="dropdown icon"></i>
+					<div class="menu">
+						<div class="item" data-value="Beginner">Beginner</div>
+						<div class="item" data-value="Intermediate">Intermediate</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<input type="submit" class="ui submit button" value="Save">
+	</form>
+</template>
