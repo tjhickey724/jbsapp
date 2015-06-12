@@ -7,7 +7,7 @@ Template.welcome.helpers({
 		sizeOf = Books.find({addedBy:Meteor.userId()}).fetch();
 		rand = Math.floor(Math.random() * sizeOf.length);
 		aShelf = sizeOf[rand].shelf;
-		return Books.find( {shelf:aShelf}, {sort: {limit: 5} } );
+		return Books.find( {shelf:aShelf}, {sort: {limit: 3} } );
 	},
 
 	recommendedShelf: function() {

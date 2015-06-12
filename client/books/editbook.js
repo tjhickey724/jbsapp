@@ -3,7 +3,6 @@ Template.editbook.helpers({
 		
 		console.log(window.location.pathname.split("/"));
 		bookId = window.location.pathname.split("/")[2];
-		//bookId = Session.get("aBook");
 		return Books.findOne({_id:bookId});
 	}
 });

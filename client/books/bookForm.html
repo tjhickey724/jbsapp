@@ -1,0 +1,44 @@
+<template name="bookForm">
+<div class="form-group">
+				<label for="bookTitle" class="col-sm-2 control-label">Title</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" id="bookTitle" name="bookTitle" value="{{title}}" required>
+				</div>
+				</div>
+			<div class="form-group">
+				<label for="bookAuthor" class="col-sm-2 control-label">Author</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" id="bookAuthor" name="bookAuthor" value="{{author}}">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="bookShelf" class="col-sm-2 control-label">Shelf</label>
+				<div class="col-sm-3">
+					<input type="text" class="form-control" id="bookShelf" name="bookShelf" value="{{shelf}}">
+					<p class="help-block">If you don&rsquo;t put it on a shelf, your book will be added to the <code>default</code> shelf.</p>
+				</div>
+
+				<label for="bookTags" class="col-sm-2 control-label">Tags</label>
+				<div class="col-sm-3">
+					<input type="text" class="form-control" id="bookTags" name="bookTags" value="{{tags}}">
+					<p class="help-block">Separate tags with commas, with no spaces next to the commas.</p>
+				</div>
+				
+			</div>
+			<div class="form-group">
+				<label for="bookISBN" class="col-sm-2 control-label">ISBN</label>
+				<div class="col-sm-3">
+					<input type="text" class="form-control" id="bookISBN" name="bookISBN" value="{{isbn}}">
+				</div>
+
+			
+				<label for="bookStatus" class="col-sm-2 control-label">Status</label>
+				<div class="col-sm-3">
+					<select class="form-control" name="bookStatus" id="bookStatus">
+						<option>Want to read</option>
+						<option>Currently reading</option>
+						<option>Finished</option>
+					</select>
+				</div>
+			</div>
+</template>

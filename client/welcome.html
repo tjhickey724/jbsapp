@@ -45,7 +45,7 @@
 				<li><em>{{title}}</em> by {{author}}</li>
 				{{/each}}
 			</ul>
-			<p>Try adding your own!</p>
+			<p>Try adding your own! {{#if currentUser}}Just create an account or login first.{{/if}}</p>
 		</div>
 
 		<div class="col-md-4 bg-warning">
@@ -56,7 +56,7 @@
 				<li><em>{{title}}</em> by {{author}}</li>
 				{{/each}}
 			</ul>
-			<p>Recommendations are based on your shelving</p>
+			<p>Recommendations are based on your shelving.</p>
 			{{else}}
 			<p>You need to be logged in!</p>
 			{{/if}}
