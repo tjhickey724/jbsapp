@@ -1,0 +1,48 @@
+
+<template name="rate">
+	{{#if currentUser}}
+
+<div class="bg-primary">
+	<h1>Animes:</h1>
+</div>
+
+<blockquote>
+  <p>Let's rate the animes you like!</p>
+  <footer>You can add the anime to the list, and remove it if you typed wrong for the name</footer>
+  <footer>You can either give or take from the points of the animes...</footer>
+</blockquote>
+
+<div class="bg-info">
+<ol>
+	{{#each animes}}
+		<li class="animes {{selectedClass}}"> <h4>{{name}} : {{score}}</h4></li>
+	{{/each}}
+</ol>
+</div>
+
+	{{#if showSelectedAnime}}
+		<li>Selected Anime: {{showSelectedAnime.name}}</li>
+	{{/if}}
+
+	{{> addAnimeForm}}
+
+	<hr/>
+	<input type="button" class="increment" value="Give 5 Points">
+	<input type="button" class="decrement" value="Take 5 Points">
+	<hr/>	
+	<input type="button" class="remove" value="Remove Anime">
+
+
+{{else}}
+		<h2>You must be logged in to see and do the ratings!</h2>
+{{/if}}
+</template>
+
+<template name="addAnimeForm">
+	{{#if currentUser}}
+		<form>
+			<input type="text" name="animeName">
+			<input type="submit" value="Add Anime">
+		</form>
+	{{/if}}
+</template>

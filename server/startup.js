@@ -14,5 +14,11 @@ Meteor.startup(function(){
 		Chat.insert({username: "Sponsers", time: new Date("6/2/2015"), message: "Enjoy!"});
 		Chat.insert({username: "Members", time: new Date("5/1/2015"), message: "Hey! What's up!"});
 	}
+
+	if(Anime.find({}).count()==0){
+		Anime.insert({name: "JoJo's Bizarre Adv.", score: "100"});
+		Anime.insert({name: "Shokugeki no Soma", score: "100"});
+		Anime.insert({name: "Kekkai Sensen", score: "100"});
+	}
 	
 });

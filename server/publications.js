@@ -4,6 +4,7 @@ Meteor.publish("theColors",function(){return Colors.find();});
 Meteor.publish("theChat",function(){return Chat.find();});
 Meteor.publish("theDisplay",function(){return Display.find();});
 Meteor.publish("theLearn",function(){return Learn.find();});
+Meteor.publish("theAnime",function(){return Anime.find();});
 
 
 Meteor.publish("userData", function () {

@@ -5,3 +5,4 @@ Meteor.subscribe("theIPs");
 Meteor.subscribe("theChat");
 Meteor.subscribe("theDisplay");
 Meteor.subscribe("theLearn");
+Meteor.subscribe("theAnime");
