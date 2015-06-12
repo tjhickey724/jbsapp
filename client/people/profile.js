@@ -8,5 +8,9 @@ Template.profile.helpers({
 		return this.profile.bio;
 		},
 	photo:function(){ // returns the URL of the gravatar photo for this email
-		return Gravatar.imageUrl(Gravatar.hash(this.emails[0].address,{secure:true}))}
+		return Gravatar.imageUrl(Gravatar.hash(this.emails[0].address,{secure:true}))
+	},
+	booksData: function() {
+		return Books.find( {addedBy:Meteor.userId()}, {sort: {addedAt:-1} } );
+	}
 })

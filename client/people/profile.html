@@ -14,4 +14,26 @@
 			</div>
 		</div>
 	</div>
+	<div class="row">
+		<table class="table table-hover table-striped">
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>Author</th>
+					<th>Shelf</th>
+					<th>ISBN</th>
+					<th>Tags</th>
+					<th>Status</th>
+					<th>&nbsp;</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each booksData}}
+				<tr>
+					{{> book}}
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
 </template>
