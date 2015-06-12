@@ -1,0 +1,15 @@
+<template name="speech">
+	<h1>Speaking demo</h1>
+	
+	<br>
+	<input type="text" name="words" id="words">
+	<button class="say"> Say</button>
+
+	<hr/>
+	<ol>
+	{{#each voices}}
+		{{> showvoice}}
+	{{/each}}
+	</ol>
+	
+</template>
