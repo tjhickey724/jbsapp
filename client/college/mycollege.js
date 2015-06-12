@@ -1,9 +1,17 @@
-/*Template.mycollege.events({
-	'submit #collegeserach': function(event){
+Template.mycollege.helpers({
+	mylist:function(){return MyColleges.find();}
+
+})
+
+
+Template.mycollege.events({
+	'submit #createlist': function(event){
 		event.preventDefault();
-		var collegename = event.target.collegeserach.value;
+		var collegename = event.target.CollegeSearch.value;
 		var currentuserId = Meteor.userId();
-		var ea = Colleges.find({collegename: collegename}).
+		var college = Colleges.find({collegename: collegename});
+		MyColleges.insert({collegename: collegename, ea:college["ea"], rd: college["rd"]});
 	}
 
-})*/
+})
+

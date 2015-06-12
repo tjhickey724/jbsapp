@@ -25,4 +25,8 @@ Meteor.startup(function(){
 		Colleges.insert({collegename: "University of Notre Dame", ea:"Nov. 1st", rd:"Jan. 3rd"});
 	}
 
+	if (MyColleges.find().count() == 0) {
+		MyColleges.insert({collegename: "Harvard University", ea:"Nov. 1st", rd:"Jan. 1st"});
+	}
+
 })

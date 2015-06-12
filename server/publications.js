@@ -1,5 +1,6 @@
 Meteor.publish("theMessage",function(){return Messages.find();});
-Meteor.publish("theCollege", function(){return Colleges.find();})
+Meteor.publish("theCollege", function(){return Colleges.find();});
+Meteor.publish("theMyCollege", function(){return MyColleges.find();});
 
 Meteor.publish("userData", function () {
   if (this.userId) {
