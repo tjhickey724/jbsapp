@@ -2,6 +2,13 @@ function FireflyNet(x,y,r,c) {
 	this.x=x; this.y=y; this.r=r; this.c=c;
 }
 
+FireflyNet.prototype.caught = function(f) {
+	var d = distFromOrigin(f.x-this.x,f.y-this.y);
+	return(d<(f.r+this.r));
+}
+
+function distFromOrigin(x,y) { return Math.sqrt(x*x + y*y);}
+
 function Firefly(x,y,r,c,vx,vy){
 	this.x=x;
 	this.y=y;
@@ -9,6 +16,7 @@ function Firefly(x,y,r,c,vx,vy){
 	this.c=c;
 	this.vx=vx;
 	this.vy=vy;
+	this.alive = true;
 }
 
 Firefly.prototype.update = function(dt){
@@ -34,9 +42,18 @@ FireflyModel.prototype.addFirefly = function(f){
 	this.fireflyList.push(f);
 }
 FireflyModel.prototype.update = function(dt){
+	var theNet = this.net;
 	_.each(this.fireflyList,
-		   function(f){f.update(dt);}
+		   function(f){
+			   f.update(dt);
+			   if (theNet.caught(f)) {
+				   f.alive = false;
+			   }
+		   
+		   }
 	   );
+	//this.fireflyList = _.filter(this.fireflyList,
+	//							function(f){return f.alive})
 }
 
 theModel = new FireflyModel();  // we just create the model!
@@ -64,6 +81,7 @@ function draw(){
 	_.each(theModel.fireflyList,
 		function(f) {
 			//console.log("drawing ff "+JSON.stringify(f));
+			if (!f.alive) return;
 			drawContext.strokeStyle = f.c;
 			drawContext.beginPath();
 			drawContext.arc(f.x*gameboard.width/100,
@@ -74,6 +92,8 @@ function draw(){
 			drawContext.stroke();
 		}
 	);
+	
+	
 	var net = theModel.net;
 	drawContext.strokeStyle = net.c;
 	drawContext.beginPath();
@@ -121,3 +141,17 @@ Template.firefly.events({
 		
 	}
 })
+Template.firefly.rendered = function(){
+document.getElementById("gameboard").addEventListener('mousemove', 
+  function(e){
+   if (running) {
+	   
+    	theModel.net.x = 100*(e.pageX-gameboard.offsetLeft)/gameboard.width;
+    	theModel.net.y = 100*(e.pageY-gameboard.offsetTop)/gameboard.height;
+ 	 }
+  }
+);
+}
+
+
+
