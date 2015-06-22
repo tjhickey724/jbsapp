@@ -37,22 +37,20 @@ FireflyModel.prototype.update = function(dt){
 theModel = new FireflyModel();  // we just create the model!
 theModel.addFirefly(f1);
 theModel.addFirefly(f2);
-for(var i =0; i<10000; i++){
-	myvx = Math.random()*10-5;
-	myvy = (Math.random()-0.5)*10;
-	theModel.addFirefly(new Firefly(50,50,1,"black",myvx,myvy))
+for(var i =0; i<100; i++){
+	var myvx = Math.random()*10-5;
+	var myvy = (Math.random()-0.5)*10;
+	var c = (Math.random()<0.5)?"red":"black";
+	theModel.addFirefly(new Firefly(50,50,1,c,myvx,myvy))
 }
 
 var counter=0;
 var lastTime = (new Date()).getTime();
 
 function draw(){
-	var theTime = (new Date()).getTime();
-	var dt = theTime - lastTime; // in milliseconds
-	lastTime = theTime;
+
 	var drawContext = gameboard.getContext("2d");
 	
-
 	drawContext.fillStyle="#eee";
 	drawContext.fillRect(0,0,gameboard.width,gameboard.height);
 	drawContext.strokeStyle="#f00";
@@ -61,6 +59,7 @@ function draw(){
 	_.each(theModel.fireflyList,
 		function(f) {
 			//console.log("drawing ff "+JSON.stringify(f));
+			drawContext.strokeStyle = f.c;
 			drawContext.beginPath();
 			drawContext.arc(f.x*gameboard.width/100,
 							f.y*gameboard.height/100,
@@ -70,19 +69,40 @@ function draw(){
 			drawContext.stroke();
 		}
 	);
-	
-	
-	theModel.update(dt/1000.0);
-	
+		
+}
 
-	window.requestAnimationFrame(draw);
+function gameLoop(){
+	var theTime = (new Date()).getTime();
+	var dt = theTime - lastTime; // in milliseconds
+	lastTime = theTime;
+
+	theModel.update(dt/1000);
+	draw();
+	
+	if (running) 
+		window.requestAnimationFrame(gameLoop);
 }
 
 drawIt = draw;
+var running = false;
 
 Template.firefly.events({
 	"click #startgame": function(event){
 		console.log("pressed start");
-		draw();
+
+		if (!running) {
+			lastTime = (new Date()).getTime();
+			running=true;
+			gameLoop();
+			$("#startgame").html("Stop");
+
+		} else {
+			running=false;
+			$("#startgame").html("Start");
+
+			
+		}
+		
 	}
 })
