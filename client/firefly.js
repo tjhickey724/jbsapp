@@ -52,8 +52,8 @@ FireflyModel.prototype.update = function(dt){
 		   
 		   }
 	   );
-	//this.fireflyList = _.filter(this.fireflyList,
-	//							function(f){return f.alive})
+	this.fireflyList = _.filter(this.fireflyList,
+								function(f){return f.alive})
 }
 
 theModel = new FireflyModel();  // we just create the model!
