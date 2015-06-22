@@ -1,4 +1,36 @@
 <template name="chat">
 <h1>Chat</h1>
 
+{{#if currentUser}}
+
+Here is our chat:
+<hr/>
+<dl>
+	{{#each chat}}
+  		{{> chatrow}}
+	{{/each}}
+</dl>
+
+{{> chatform}}
+
+{{else}}
+	<h2>You must be logged in to see the chats</h2>
+{{/if}}
+
 </template>
+
+
+<template name="chatrow">
+   <dt><h1><small><small>{{username}}</small></small></h1></dt>
+   <dt><small>{{createdAt}}</small></dt>
+   <dd>{{message}}</dd>
+</template>
+
+<template name = "chatform">
+	<br/><h3>Enter your message!</h3><br/>
+	<form id="sendmessage">
+		<!-- username: <input type="text" name="username"> -->
+		message: <input type="text" name="message"><br/>
+		<input type="submit">
+	</form>
+</template>	
