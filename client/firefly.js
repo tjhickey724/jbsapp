@@ -1,3 +1,7 @@
+function FireflyNet(x,y,r,c) {
+	this.x=x; this.y=y; this.r=r; this.c=c;
+}
+
 function Firefly(x,y,r,c,vx,vy){
 	this.x=x;
 	this.y=y;
@@ -21,6 +25,7 @@ f2 = new Firefly(50,50,10,"red",45,15);
 function FireflyModel(){
 	this.w=100;
 	this.h=100;
+	this.net = new FireflyNet(10,10,10,"green");
 	this.fireflyList = [];
 	this.bgcolor="#eee";
 }
@@ -69,6 +74,14 @@ function draw(){
 			drawContext.stroke();
 		}
 	);
+	var net = theModel.net;
+	drawContext.strokeStyle = net.c;
+	drawContext.beginPath();
+	drawContext.arc(net.x*gameboard.width/100,
+					net.y*gameboard.height/100,
+					net.r*gameboard.width/100,
+					0,2*Math.PI,true);
+	drawContext.stroke();
 		
 }
 
@@ -76,6 +89,8 @@ function gameLoop(){
 	var theTime = (new Date()).getTime();
 	var dt = theTime - lastTime; // in milliseconds
 	lastTime = theTime;
+	var fps = 1000/(dt);
+	//console.log("fps="+fps);
 
 	theModel.update(dt/1000);
 	draw();
