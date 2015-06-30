@@ -1,27 +1,38 @@
 <template name="about">
-<h1>About</h1>
+	
+    {{#contentFor "headerButtonLeft"}}
+      {{>ionNavBackButton path="index"}}
+    {{/contentFor}}
+  
+    {{#contentFor "headerTitle"}}
+      <h1 class="title">About the Brandeis JBS App</h1>
+    {{/contentFor}}
+	
 
-I made this page!! {{theTime}}
-<hr/>
+	
+    {{#ionView}}
+      {{#ionContent}}
+      {{#ionList}}
 
-Here is our team:
-<table class="table table-condensed">
-	<thead>
-		<tr><th>Name</th><th>Email</th></tr>
-	</thead>
-	<tbody>
-{{#each team}}
-  {{> teamrow}}
-{{/each}}
-	</tbody>
-</table>
+	  	{{#each team}}
+			{{> teamrow}}
+		{{/each}}
 
+	{{/ionList}}
+
+
+
+     {{/ionContent}}
+  {{/ionView}}
+   
 </template>
 
 
 <template name="teamrow">
-   <tr>
-   	  <td>{{name}}</td>
-   	  <td>{{email}}</td>
-   </tr>
+        {{#ionItem path="sponsors" iconLeft=true iconRight=true}}
+          {{> ionIcon icon="ios-checkmark" class="positive"}}
+          {{name}} - {{email}}
+          {{> ionIcon icon="ios-arrow-right"}}
+        {{/ionItem}}
 </template>
+
