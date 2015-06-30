@@ -12,3 +12,7 @@ sacha:spin
 accounts-password
 jparker:gravatar
 ian:accounts-ui-bootstrap-3
+fourseven:scss@2.0.0
+meteoric:ionic-sass
+meteoric:ionicons-sass
+meteoric:ionic
